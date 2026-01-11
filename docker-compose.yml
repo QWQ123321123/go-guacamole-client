@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  guacd:
+    image: guacamole/guacd:latest
+    container_name: go-guacamole-guacd
+    ports:
+      - "4822:4822"
+    volumes:
+      - guacd-drive:/drive
+      - guacd-record:/record
+    environment:
+      - GUACD_LOG_LEVEL=info
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "4822"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  guacd-drive:
+    driver: local
+  guacd-record:
+    driver: local
