@@ -200,5 +200,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [seknox/guacamole](https://github.com/seknox/guacamole) - Go library for instruction building
 
 ## Author
-
-Your Name - your.email@example.com
+QWQ123321123
